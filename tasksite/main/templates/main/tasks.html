@@ -1,0 +1,19 @@
+{%extends 'main/base.html'%}
+{%block title%}Задачи{%endblock%}
+{%block page-content%}
+<div class="d-flex flex-column flex-md-row align-items-center">
+    <h2>Мои задачи</h2>
+    <a class="btn btn-light d-inline-flex mt-2 mt-md-0 ms-md-auto" href="{%url 'create'%}" role="button">Добавить задачу</a>
+</div>
+{%if tasks%}
+{%for task in tasks%}
+<div class="alert alert-warning mt-2">
+    <h3>{{task.title}}</h3>
+    <p>{{task.task}}</p>
+</div>
+{%endfor%}
+{%else%}
+<p>Вы не добавили задачи</p>
+{%endif%}
+
+{%endblock%}

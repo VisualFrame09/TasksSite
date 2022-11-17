@@ -1,0 +1,21 @@
+{%extends 'main/base.html'%}
+{%block title%}Создание задачи{%endblock%}
+{%block page-content%}
+<h1 class="mb-5">Создание новой задачи</h1>
+<form action="" method="post">
+    {%csrf_token%}
+
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Название задачи</label>
+        {{form.title}}
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Описание задачи</label>
+        {{form.task}}
+    </div>
+    <button class="btn btn-light" type="submit">Добавить</button>
+    <span>{{error}}</span>
+</form>
+
+{%endblock%}
